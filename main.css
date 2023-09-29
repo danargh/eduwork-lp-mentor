@@ -71,6 +71,22 @@ html {
       var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-input {
+   box-shadow: 0.52872px 0.9819px 5.4288px 0px rgba(24, 124, 255, 0.02),
+      2.36367px 4.38968px 12.5424px 0px rgba(24, 124, 255, 0.03),
+      5.87808px 10.91643px 28.6416px 0px rgba(24, 124, 255, 0.04),
+      11.44515px 21.25528px 61.0272px 0px rgba(24, 124, 255, 0.05),
+      19.43809px 36.09932px 117px 0px rgba(24, 124, 255, 0.07);
+}
+
+.shadow-card-custom {
+   box-shadow: 0.52872px 0.9819px 5.4288px 0px rgba(0, 0, 0, 0.02),
+      2.36367px 4.38968px 12.5424px 0px rgba(0, 0, 0, 0.03),
+      5.87808px 10.91643px 28.6416px 0px rgba(0, 0, 0, 0.04),
+      11.44515px 21.25528px 61.0272px 0px rgba(0, 0, 0, 0.05),
+      19.43809px 36.09932px 117px 0px rgba(0, 0, 0, 0.07);
+}
+
 .activeMenu {
    color: #187cff;
    font-weight: 600;
@@ -87,7 +103,7 @@ html {
    position: absolute;
    width: 100%;
    height: 215px;
-   background: url(./images/hero/Vector.png);
+   background: url(./assets/images/Vector.png);
    animation: animate 10s linear infinite;
 }
 .wave::before {
@@ -97,7 +113,7 @@ html {
    width: 100%;
    height: 208px;
    top: -52px;
-   background: url(./images/hero/wave-g.png);
+   background: url(./assets/images/wave-g.png);
    animation: animate-re 15s linear infinite;
 }
 .wave::after {
@@ -108,7 +124,7 @@ html {
    height: 208px;
    top: -20px;
    opacity: 0.5;
-   background: url(./images/hero/wave-g.png);
+   background: url(./assets/images/wave-g.png);
    animation: animate-re 15s linear infinite;
 }
 

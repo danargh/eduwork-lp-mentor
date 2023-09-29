@@ -74,7 +74,7 @@ window.addEventListener("scroll", function () {
       document.getElementById("navbar").style.boxShadow =
          "0 0 10px rgba(0,0,0,0.1)";
    } else {
-      document.getElementById("navbar").style.backgroundColor = "transparent";
+      document.getElementById("navbar").style.backgroundColor = "#ffffff";
       document.getElementById("navbar").style.boxShadow = "none";
    }
 });
