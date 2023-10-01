@@ -81,143 +81,137 @@
    </head>
    <body class="bg-[#f6fcff] text-[#404040] font-[Poppins]">
       <!-- Navabar -->
-      <div class="w-full z-50 bg-white" id="navbar">
-         <nav
-            class="flex justify-between items-center w-[90%] lg:w-[1016px] container mx-auto py-2 md:py-5"
-         >
-            <a href="/" class="w-[154px] h-[31px]">
-               <img
-                  loading="lazy"
-                  class=""
-                  src="./images/logo/favicon.png"
-                  alt="Eduwork Logo"
-               />
-            </a>
-            <button
-               data-collapse-toggle="navbar-cta"
-               type="button"
-               class="navbar-toggle z-10 inline-flex p-2 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 right-0 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-               aria-controls="navbar-cta"
-               aria-expanded="false"
+      <nav class="z-50" id="navbar">
+         <div class="w-[90%] lg:w-[1016px] container mx-auto py-2 md:py-4">
+            <div
+               class="container flex flex-wrap items-center justify-between mx-auto"
             >
-               <span class="sr-only">Open main menu</span>
-               <svg
-                  class="w-[37px] h-[37px]"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
+               <a class="flex items-center" href="/">
+                  <img
+                     class="h-6 sm:h-7"
+                     src="images/logo/favicon.svg"
+                     alt="Eduwork Logo"
+                  />
+               </a>
+               <div class="flex gap-3 md:order-2">
+                  <button
+                     type="button"
+                     class="text-[#187CFF] font-[500] hover:text-white bg-[#F6FCFF] text-[14px] py-[9.5px] px-[20px] rounded-[12px] border border-[#187CFF] hidden md:block hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 text-sm text-center mr-3 md:mr-0"
+                  >
+                     Sign In
+                  </button>
+                  <button
+                     type="button"
+                     class="text-white font-[500] bg-[#187CFF] text-[14px] py-[9.5px] px-[20px] rounded-[12px] hidden md:block hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 text-sm text-center mr-3 md:mr-0"
+                  >
+                     Register
+                  </button>
+                  <button
+                     data-collapse-toggle="navbar-sticky"
+                     type="button"
+                     class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                     aria-controls="navbar-sticky"
+                     aria-expanded="false"
+                  >
+                     <span class="sr-only">Open main menu</span>
+                     <svg
+                        class="w-6 h-6"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                     >
+                        <path
+                           fill-rule="evenodd"
+                           d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                           clip-rule="evenodd"
+                        ></path>
+                     </svg>
+                  </button>
+               </div>
+               <div
+                  class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                  id="navbar-sticky"
                >
-                  <path
-                     fill-rule="evenodd"
-                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                     clip-rule="evenodd"
-                  ></path>
-               </svg>
-            </button>
-            <ul class="hidden md:flex gap-[40px]">
-               <li>
-                  <div class="relative text-sm font-semibold">
-                     <button class="flex gap-[5px] border-none">Home</button>
-                  </div>
-               </li>
-               <li>
-                  <div
-                     x-data="{
-              open: false,
-              toggle() {
-                  if (this.open) {
-                      return this.close()
-                  }
-  
-                  this.$refs.button.focus()
-  
-                  this.open = true
-              },
-              close(focusAfter) {
-                  if (! this.open) return
-  
-                  this.open = false
-  
-                  focusAfter && focusAfter.focus()
-              }
-          }"
-                     x-on:keydown.escape.prevent.stop="close($refs.button)"
-                     x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
-                     x-id="['dropdown-button']"
-                     class="relative text-sm font-semibold"
+                  <ul
+                     class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row gap-[10px] md:gap-[40px] md:mt-0 md:text-sm md:font-semibold md:border-0 md:bg-transparent"
                   >
                      <button
-                        x-ref="button"
-                        x-on:click="toggle()"
-                        :aria-expanded="open"
-                        :aria-controls="$id('dropdown-button')"
-                        type="button"
-                        class="flex gap-[5px] border-none"
+                        id="dropdownNavbarLink"
+                        data-dropdown-toggle="dropdownNavbar"
+                        class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
+                     >
+                        Home
+                     </button>
+
+                     <button
+                        id="dropdownNavbarLink"
+                        data-dropdown-toggle="dropdownNavbar"
+                        class="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
                      >
                         Kelas
                         <svg
-                           xmlns="../images/arrow.svg"
-                           class="absolute right-0 md:relative md:right-auto md:h-5 md:w-5 h-8 w-8"
-                           viewBox="0 0 20 20"
+                           class="w-5 h-5 ml-1"
+                           aria-hidden="true"
                            fill="currentColor"
+                           viewBox="0 0 20 20"
+                           xmlns="http://www.w3.org/2000/svg"
                         >
                            <path
                               fill-rule="evenodd"
                               d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                               clip-rule="evenodd"
-                           />
+                           ></path>
                         </svg>
                      </button>
                      <div
-                        x-ref="panel"
-                        x-show="open"
-                        x-transition.origin.top.left
-                        x-on:click.outside="close($refs.button)"
-                        :id="$id('dropdown-button')"
-                        style="display: none"
-                        class="relative md:absolute left-0 mt-[25px] w-full md:w-40 rounded-md bg-white shadow-filter"
+                        id="dropdownNavbar"
+                        class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                      >
-                        <a
-                           href=""
-                           class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500"
-                           >Mentor</a
+                        <ul
+                           class="py-1 text-sm text-gray-700 dark:text-gray-400"
+                           aria-labelledby="dropdownLargeButton"
                         >
-                        <a
-                           href=""
-                           class="flex gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-[22px] md:text-sm hover:bg-gray-50 disabled:text-gray-500"
-                           >Mentor</a
-                        >
+                           <li>
+                              <a
+                                 href="#"
+                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                 >Mentor</a
+                              >
+                           </li>
+                           <li>
+                              <a
+                                 href="#"
+                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                 >Mentor</a
+                              >
+                           </li>
+                        </ul>
                      </div>
-                  </div>
-               </li>
-               <li>
-                  <div class="relative text-sm font-semibold">
-                     <a
-                        href="#"
-                        class="flex gap-[5px] border-none items-center text-[#3F85EC]"
+                     <button
+                        id="dropdownNavbarLink"
+                        data-dropdown-toggle="dropdownNavbar"
+                        class="text-primary flex items-center justify-between w-full py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 md:w-auto md:dark:hover:bg-transparent"
                      >
                         Become a Mentor
-                     </a>
-                  </div>
-               </li>
-            </ul>
-            <div class="hidden w-full lg:flex gap-2 md:w-auto h-fit">
-               <button
-                  class="text-[#187CFF] font-[500] bg-white text-[14px] py-[9.5px] px-[20px] rounded-[12px] border border-[#187CFF]"
-                  type="button"
-               >
-                  Sign In
-               </button>
-               <button
-                  class="text-white font-[500] bg-[#187CFF] text-[14px] py-[9.5px] px-[20px] rounded-[12px]"
-                  type="button"
-               >
-                  Register
-               </button>
+                     </button>
+                     <button
+                        type="button"
+                        class="text-white rounded-xl block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+                     >
+                        Sign In
+                     </button>
+                     <button
+                        type="button"
+                        class="text-white rounded-xl block md:hidden bg-primary hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+                     >
+                        Register
+                     </button>
+                  </ul>
+               </div>
             </div>
-         </nav>
-      </div>
+         </div>
+      </nav>
       <!-- End Navbar -->
 
       <!-- Hero -->
@@ -231,98 +225,101 @@
             class="lg:hidden block absolute left-0 w-[200%] md:w-full h-[740px] hero-gradasi z-[9]"
          ></div>
       </div>
-      <div class="container mx-auto m-0">
-         <section
-            id="Hero"
-            class="mt-20 relative w-full bg-center xl:min-w-[1440px] h-[800px] bg-[url('./assets/images/bg-hero.png')] bg-no-repeat bg-cover"
-         >
-            <div
-               class="flex md:flex-row w-[90%] md:w-full mx-auto h-fit lg:w-[1016px]"
-            >
-               <div class="w-fit h-[680px] pt-[80px]">
-                  <div class="absolute flex flex-col w-[90%] md:w-[80%] z-30">
-                     <h1
-                        class="font-[700] w-full md:w-[480px] leading-[120%] text-[48px] md:text-[40px] mx-auto md:mx-0 text-left"
-                     >
-                        Ingin
-                        <span class="text-[#187CFF]">Waktu Luang</span> Kamu
-                        <span class="text-[#187CFF]"
-                           >Bernilai Belasan Juta Per Bulan</span
-                        >?
-                     </h1>
+      <div
+         class="bg-center bg-[url('./assets/images/bg-hero.png')] bg-no-repeat max-[1480px]:bg-top min-[1480px]:bg-contain bg-cover"
+      >
+         <div class="container mx-auto m-0">
+            <section id="Hero" class="mt-20 max-[768px]:mt-14 w-full h-[800px]">
+               <div
+                  class="flex md:flex-row w-[90%] md:w-full mx-auto h-fit lg:w-[1016px]"
+               >
+                  <div class="w-fit h-[680px] pt-[80px]">
                      <div
-                        class="flex-col w-full md:w-[418px] mt-[12px] md:mt-[12px]"
+                        class="relative flex flex-col w-[90%] md:w-[80%] z-30"
                      >
-                        <p class="font-[500] text-xl">
-                           Ayo ikut bergabung bersama kami
-                        </p>
-                        <p class="text-[#187CFF] text-xl">
-                           #gerakan-praktisi-mengajar
-                        </p>
-                     </div>
-                     <div class="flex gap-6 self-stretch my-6">
-                        <div class="pr-6 border-r-2">
-                           <h4 class="font-[700] text-[#187CFF] text-[28px]">
-                              1691+
-                           </h4>
-                           <p class="font-[500] text-sm">Member bergabung</p>
-                        </div>
-                        <div class="pr-6 border-r-2">
-                           <h4 class="font-[700] text-[#187CFF] text-[28px]">
-                              59+
-                           </h4>
-                           <p class="font-[500] text-sm">Mentor Aktif</p>
-                        </div>
-                        <div class="pr-6">
-                           <h4 class="font-[700] text-[#187CFF] text-[28px]">
-                              136juta++
-                           </h4>
-                           <p class="font-[500] text-sm">Profit Sharing</p>
-                        </div>
-                     </div>
-
-                     <form
-                        action="#"
-                        class="shadow-input flex bg-white p-2 rounded-3xl max-w-[480px] gap-2"
-                     >
-                        <div class="p-4 w-full flex gap-2 items-center">
-                           <img
-                              src="assets/icons/mail.svg"
-                              width="24px"
-                              alt="mail-icon"
-                           />
-                           <input
-                              type="email"
-                              class="w-full outline-none"
-                              placeholder="Enter your email"
-                           />
-                        </div>
-                        <button
-                           class="flex items-center px-8 py-4 bg-[#187CFF] font-[600] text-white rounded-2xl"
-                           type="submit"
+                        <h1
+                           class="text-4xl font-[700] w-full md:w-[480px] md:text-[40px] md:leading-[48px] mx-auto md:mx-0 text-left"
                         >
-                           Daftar
-                        </button>
-                     </form>
+                           Ingin
+                           <span class="text-[#187CFF]">Waktu Luang</span> Kamu
+                           <span class="text-[#187CFF]"
+                              >Bernilai Belasan Juta Per Bulan</span
+                           >?
+                        </h1>
+                        <div
+                           class="flex-col w-full md:w-[418px] mt-[12px] md:mt-[12px]"
+                        >
+                           <p class="font-[500] text-xl">
+                              Ayo ikut bergabung bersama kami
+                           </p>
+                           <p class="text-[#187CFF] text-xl">
+                              #gerakan-praktisi-mengajar
+                           </p>
+                        </div>
+                        <div class="flex justify-start gap-6 my-6 flex-wrap">
+                           <div class="pr-6 border-r-2">
+                              <h4 class="font-[700] text-[#187CFF] text-[28px]">
+                                 1691+
+                              </h4>
+                              <p class="font-[500] text-sm">Member bergabung</p>
+                           </div>
+                           <div class="pr-6 border-r-2">
+                              <h4 class="font-[700] text-[#187CFF] text-[28px]">
+                                 59+
+                              </h4>
+                              <p class="font-[500] text-sm">Mentor Aktif</p>
+                           </div>
+                           <div class="pr-6">
+                              <h4 class="font-[700] text-[#187CFF] text-[28px]">
+                                 136Juta+
+                              </h4>
+                              <p class="font-[500] text-sm">Profit Sharing</p>
+                           </div>
+                        </div>
+
+                        <form
+                           action="#"
+                           class="shadow-input flex bg-white p-2 rounded-3xl max-w-[480px] gap-2"
+                        >
+                           <div class="p-4 w-full flex gap-2 items-center">
+                              <img
+                                 src="assets/icons/mail.svg"
+                                 width="24px"
+                                 alt="mail-icon"
+                              />
+                              <input
+                                 type="email"
+                                 class="w-full outline-none"
+                                 placeholder="Enter your email"
+                              />
+                           </div>
+                           <button
+                              class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 flex items-center px-8 py-4 bg-[#187CFF] font-[600] text-white rounded-2xl"
+                              type="submit"
+                           >
+                              Daftar
+                           </button>
+                        </form>
+                     </div>
                   </div>
+
+                  <div
+                     class="relative w-full h-[730px] hidden lg:block z-20"
+                  ></div>
                </div>
 
                <div
-                  class="relative w-full h-[730px] hidden lg:block z-20"
+                  class="absolute top-0 left-0 w-[200%] md:w-full h-[740px] hero-gradasi z-[9] hidden md:block"
                ></div>
-            </div>
+               <div
+                  class="hero-gradasi2 absolute top-0 right-0 w-[5%] lg:w-[216px] h-[856px]"
+               ></div>
 
-            <div
-               class="absolute top-0 left-0 w-[200%] md:w-full h-[740px] hero-gradasi z-[9] hidden md:block"
-            ></div>
-            <div
-               class="hero-gradasi2 absolute top-0 right-0 w-[5%] lg:w-[216px] h-[856px]"
-            ></div>
-
-            <div
-               class="absolute w-full h-fit top-[667px] md:top-[637px] bg-transparent z-20"
-            ></div>
-         </section>
+               <div
+                  class="absolute w-full h-fit top-[667px] md:top-[637px] bg-transparent z-20"
+               ></div>
+            </section>
+         </div>
       </div>
       <!-- End Hero -->
 
@@ -391,7 +388,7 @@
       <div class="bg-white py-20">
          <div class="container mx-auto">
             <section
-               class="flex flex-col items-center w-[80%] h-fit mx-auto lg:w-[1016px]"
+               class="flex flex-col items-center w-[90%] h-fit mx-auto lg:w-[1016px]"
             >
                <h4 class="text-center text-4xl font-[600] text-[#303030]">
                   Pilih Industri Kamu Saat Ini
@@ -407,7 +404,7 @@
                />
                <a
                   href="#"
-                  class="w-[192px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[192px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                >
                   Jelajah Industri
                </a>
@@ -417,11 +414,10 @@
       <!-- End of industri -->
 
       <!-- WFH -->
-      <!-- bg image -->
-      <div class="py-20">
+      <div class="py-32 md:py-20">
          <div class="container mx-auto">
             <section
-               class="lg:relative flex flex-col justify-center items-center w-[80%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <h4 class="text-center text-4xl font-[600] text-[#303030]">
                   Bertemu Semuanya Walaupun di Rumah Aja
@@ -491,7 +487,7 @@
                <div class="relative w-full mx-auto">
                   <a
                      href="#"
-                     class="absolute left-1/2 transform -translate-x-1/2 top-10 w-[200px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                     class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 absolute left-1/2 transform -translate-x-1/2 top-10 w-[200px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                   >
                      Daftar Sekarang
                   </a>
@@ -499,14 +495,982 @@
             </section>
          </div>
          <div
-            class="h-[576px] bg-[url('./assets/images/bg-wfh.png')] bg-center bg-no-repeat bg-contain"
+            class="md:h-[576px] md:block hidden bg-[url('./assets/images/bg-wfh.png')] bg-center bg-no-repeat bg-contain"
          ></div>
       </div>
       <!-- End of Info -->
 
       <!-- Why eduwork-->
+      <div class="py-20 bg-white">
+         <div class="container mx-auto">
+            <section
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <h4 class="text-center text-4xl font-[600] text-[#303030]">
+                  Mengapa Mentor Memilih Eduwork?
+               </h4>
+               <p class="mt-4 text-center text-xl font-[400] text-[#676767]">
+                  Telah menjangkau 40 kota di Indonesia, kami terhubung dengan
+                  partner praktisi dari ragam geografis; Perbanyak koneksi,
+                  kembangkan komunitas.
+               </p>
+               <div
+                  class="grid min-[450px]:grid-cols-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full gap-6 my-16"
+               >
+                  <div
+                     class="shadow-card-custom rounded-xl flex flex-col items-center bg-white"
+                  >
+                     <div
+                        class="bg-[url('./assets/images/why-edu1.png')] h-[300px] bg-cover rounded-t-xl w-full bg-no-repeat"
+                     ></div>
 
+                     <div
+                        class="flex flex-col gap-2 items-start text-[#303030] p-5"
+                     >
+                        <h5 class="font-[600] text-[24px]">
+                           Platform Multifungsi
+                        </h5>
+                        <p class="font-[400] text-base text-[#676767]">
+                           Beraktivitas dengan instan dan menyenangkan!
+                           Fasilitas Eduwork mulai dari booking jadwal otomatis
+                           hingga dashboard mentoring.
+                        </p>
+                     </div>
+                  </div>
+                  <div
+                     class="shadow-card-custom rounded-xl flex flex-col items-center bg-white"
+                  >
+                     <div
+                        class="bg-[url('./assets/images/why-edu2.png')] h-[300px] bg-cover rounded-t-xl w-full bg-no-repeat"
+                     ></div>
+
+                     <div
+                        class="flex flex-col gap-2 items-start text-[#303030] p-5"
+                     >
+                        <h5 class="font-[600] text-[24px]">
+                           Hustling Anti Ribet
+                        </h5>
+                        <p class="font-[400] text-base text-[#676767]">
+                           Hasilkan double hingga triple income tidak hanya dari
+                           komunitas dan webinar, tapi juga dari live mentoring.
+                        </p>
+                     </div>
+                  </div>
+                  <div
+                     class="shadow-card-custom rounded-xl flex flex-col items-center bg-white"
+                  >
+                     <div
+                        class="bg-[url('./assets/images/why-edu3.png')] h-[300px] bg-cover rounded-t-xl w-full bg-no-repeat"
+                     ></div>
+
+                     <div
+                        class="flex flex-col gap-2 items-start text-[#303030] p-5"
+                     >
+                        <h5 class="font-[600] text-[24px]">
+                           Langsung Dapat Klien
+                        </h5>
+                        <p class="font-[400] text-base text-[#676767]">
+                           Percayakan tim marketing kami untuk perluas personal
+                           brand kamu! Profil para mentor baru terbukti mendapat
+                           traffic hingga 30%.
+                        </p>
+                     </div>
+                  </div>
+                  <div
+                     class="shadow-card-custom rounded-xl flex flex-col items-center bg-white"
+                  >
+                     <div
+                        class="bg-[url('./assets/images/why-edu4.png')] h-[300px] bg-cover rounded-t-xl w-full bg-no-repeat"
+                     ></div>
+
+                     <div
+                        class="flex flex-col gap-2 items-start text-[#303030] p-5"
+                     >
+                        <h5 class="font-[600] text-[24px]">
+                           Group Mentor Ahli
+                        </h5>
+                        <p class="font-[400] text-base text-[#676767]">
+                           Network = Networth! Mentor-mentor kami berasal dari
+                           startup hingga korporasi; ahli yang punya pengalaman
+                           3+ tahun.
+                        </p>
+                     </div>
+                  </div>
+                  <div
+                     class="shadow-card-custom rounded-xl flex flex-col items-center bg-white"
+                  >
+                     <div
+                        class="bg-[url('./assets/images/why-edu5.png')] h-[300px] bg-cover rounded-t-xl w-full bg-no-repeat"
+                     ></div>
+
+                     <div
+                        class="flex flex-col gap-2 items-start text-[#303030] p-5"
+                     >
+                        <h5 class="font-[600] text-[24px]">Jadwal Fleksibel</h5>
+                        <p class="font-[400] text-base text-[#676767]">
+                           Hanya luang di akhir pekan? Eduwork bantu atur
+                           jadwalmu! Maksimalkan kegiatan harian dengan fitur
+                           automatic booking.
+                        </p>
+                     </div>
+                  </div>
+                  <div
+                     class="shadow-card-custom rounded-xl flex flex-col items-center bg-white"
+                  >
+                     <div
+                        class="bg-[url('./assets/images/why-edu6.png')] h-[300px] bg-cover rounded-t-xl w-full bg-no-repeat"
+                     ></div>
+
+                     <div
+                        class="flex flex-col gap-2 items-start text-[#303030] p-5"
+                     >
+                        <h5 class="font-[600] text-[24px]">
+                           Transparansi Payment
+                        </h5>
+                        <p class="font-[400] text-base text-[#676767]">
+                           Aktivitas pembayaran lebih transparan dengan sistem
+                           in-app payment!
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <a
+                  href="#"
+                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[250px] text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+               >
+                  Mulai sebagai mentor
+               </a>
+            </section>
+         </div>
+      </div>
       <!-- End of Why eduwork-->
+
+      <!-- Waktu luang jadi Cuan -->
+      <div class="absolute w-full h-[100px] z-10">
+         <div class="wave"></div>
+      </div>
+      <div class="mt-16 pt-12 pb-12">
+         <div class="container mx-auto">
+            <section
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <h4
+                  class="relative z-30 text-center text-4xl font-[600] text-[#303030]"
+               >
+                  Sekarang Bisa Ubah Waktu Luang menjadi Cuan
+               </h4>
+               <p
+                  class="relative z-30 mt-4 text-center text-xl font-[400] text-[#676767]"
+               >
+                  Berbekal pengalaman tahunan, kamu bisa ciptakan ruang mengajar
+                  kamu sendiri.
+               </p>
+               <a
+                  href="#"
+                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[250px] my-8 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+               >
+                  Daftar Sebagai Mentor
+               </a>
+               <img
+                  class="relative z-30"
+                  src="assets/images/bg-waktu-luang.png"
+                  alt="background waktu luang"
+               />
+            </section>
+         </div>
+      </div>
+      <div class="relative">
+         <div class="absolute w-full h-[100px] top-[-20px] z-10">
+            <div class="white-wave"></div>
+         </div>
+      </div>
+      <!-- End of Waktu luang jadi Cuan -->
+
+      <!-- Benefit -->
+      <div class="pb-12 pt-32 bg-white">
+         <div class="container mx-auto">
+            <!-- Benefit 1 -->
+            <section
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <h4
+                  class="relative z-30 text-center text-4xl font-[600] text-[#303030]"
+               >
+                  Benefit Setelah Mulai Mentoring
+               </h4>
+               <div
+                  class="flex w-full gap-x-10 gap-y-5 max-[768px]:flex-wrap justify-between items-center max-[768px]:justify-center mt-12 flex-nowrap"
+               >
+                  <img
+                     class="mx-auto hidden w-full max-[768px]:block"
+                     src="assets/images/benefit-1.png"
+                     alt="benefit images 1"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Sempurnakan Leadership Skills
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Perkuat kepercayaan publik dengan mengajar di bidang
+                        kompetensi kamu! Menjadi mentor berarti juga berlatih
+                        mempertajam skill yang dapat memengaruhi lebih banyak
+                        orang.
+                     </p>
+                     <div class="flex gap-8 mt-2">
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Top company candidate
+                        </div>
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Already tested
+                        </div>
+                     </div>
+                  </div>
+                  <img
+                     class="mx-auto hidden max-[1024px]:max-w-[500px] lg:w-full min-[768px]:block"
+                     src="assets/images/benefit-1.png"
+                     alt="benefit images 1"
+                  />
+               </div>
+            </section>
+
+            <!-- Benefit 2 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex justify-between gap-x-10 gap-y-0 items-center max-[768px]:justify-center mt-12 max-[768px]:flex-wrap flex-nowrap"
+               >
+                  <img
+                     class="mx-auto max-[1024px]:w-full"
+                     src="assets/images/benefit-2.png"
+                     alt="benefit images 2"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Raih Income Tambahan
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Seiring aktivitas mentoring kamu meningkat, komunitas
+                        rintisan kamu juga akan semakin ramai; meningkatkan
+                        traffic ke event berbayar kamu.
+                     </p>
+                     <div class="flex gap-8 mt-2">
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Top company candidate
+                        </div>
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Already tested
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <!-- benefit 3 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex w-full gap-x-10 gap-y-0 max-[768px]:flex-wrap justify-between items-center max-[768px]:justify-center mt-12 flex-nowrap"
+               >
+                  <img
+                     class="mx-auto hidden w-full max-[768px]:block"
+                     src="assets/images/benefit-3.png"
+                     alt="benefit images 3"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Pendekatan Berbasis Data
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        LMS kami membantu kamu mengumpulkan dan menganalisis
+                        kebiasaan dan kinerja mentee. Ukur dampak dan
+                        efektifitas kamu selama mentoring!
+                     </p>
+                     <div class="flex gap-8 mt-2">
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Top company candidate
+                        </div>
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Already tested
+                        </div>
+                     </div>
+                  </div>
+                  <img
+                     class="mx-auto hidden max-[1024px]:max-w-[500px] lg:w-full min-[768px]:block"
+                     src="assets/images/benefit-3.png"
+                     alt="benefit images 3"
+                  />
+               </div>
+            </section>
+
+            <!-- Benefit 4 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex justify-betwee gap-x-10 gap-y-0 items-center max-[768px]:justify-center mt-12 max-[768px]:flex-wrap flex-nowrap"
+               >
+                  <img
+                     class="mx-auto max-[1024px]:w-full"
+                     src="assets/images/benefit-4.png"
+                     alt="benefit images 4"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Tingkatkan Kredibilitas
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Eduwork selalu diminta merekomendasikan freelancer dan
+                        konsultan. Jika rekam jejak kamu memuaskan, kami akan
+                        berikan rekomendasi; tanpa dipungut biaya.
+                     </p>
+                     <div class="flex gap-8 mt-2">
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Top company candidate
+                        </div>
+                        <div class="flex gap-2 items-start">
+                           <img
+                              src="assets/icons/checkbox.svg"
+                              alt="checklist"
+                           />Already tested
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <!-- End of Benefit -->
+
+      <!-- LMS -->
+      <div class="absolute w-full h-[100px] z-10">
+         <div class="wave"></div>
+      </div>
+      <div class="mt-16 pt-12 pb-24">
+         <div
+            class="container mx-auto bg-[url('assets/images/bg-blur.png')] bg-contain bg-center bg-no-repeat"
+         >
+            <section
+               class="lg:relative z-30 flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <h4
+                  class="relative z-30 text-center mb-12 text-4xl font-[600] text-[#303030]"
+               >
+                  Bagaimana LMS Kami Mempermudah Monitoring
+               </h4>
+               <div
+                  class="flex max-[1024px]:flex-col items-center gap-8 flex-nowrap"
+               >
+                  <div
+                     class="grid grid-cols-1 max-[400px]:grid-cols-1 max-[1024px]:grid-cols-4 max-[768px]:grid-cols-2 max-[1024px]:w-full gap-6 w-[264px]"
+                  >
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="#187CFF"
+                        >
+                           <mask
+                              id="mask0_2420_11115"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                           >
+                              <rect width="32" height="32" fill="black" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11115)">
+                              <path
+                                 d="M6.66667 27.9997C5.93333 27.9997 5.30556 27.7386 4.78333 27.2163C4.26111 26.6941 4 26.0663 4 25.333C4 24.5997 4.26111 23.9719 4.78333 23.4497C5.30556 22.9275 5.93333 22.6663 6.66667 22.6663C7.4 22.6663 8.02778 22.9275 8.55 23.4497C9.07222 23.9719 9.33333 24.5997 9.33333 25.333C9.33333 26.0663 9.07222 26.6941 8.55 27.2163C8.02778 27.7386 7.4 27.9997 6.66667 27.9997ZM22.6667 27.9997C22.6667 25.4219 22.1778 23.0052 21.2 20.7497C20.2222 18.4941 18.8833 16.5163 17.1833 14.8163C15.4833 13.1163 13.5056 11.7775 11.25 10.7997C8.99444 9.8219 6.57778 9.33301 4 9.33301V5.33301C7.13333 5.33301 10.0778 5.92745 12.8333 7.11634C15.5889 8.30523 17.9889 9.9219 20.0333 11.9663C22.0778 14.0108 23.6944 16.4108 24.8833 19.1663C26.0722 21.9219 26.6667 24.8663 26.6667 27.9997H22.6667ZM14.6667 27.9997C14.6667 25.0441 13.6278 22.5275 11.55 20.4497C9.47222 18.3719 6.95556 17.333 4 17.333V13.333C6.04444 13.333 7.95556 13.7163 9.73333 14.483C11.5111 15.2497 13.0611 16.2941 14.3833 17.6163C15.7056 18.9386 16.75 20.4886 17.5167 22.2663C18.2833 24.0441 18.6667 25.9552 18.6667 27.9997H14.6667Z"
+                              />
+                           </g>
+                        </svg>
+
+                        <div>
+                           <h5 class="font-[600] text-base">Assesment Siswa</h5>
+                           <p class="font-[400] text-xs">
+                              Kamu bisa memposting kegiatanmu selama di
+                              komunitas
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="#187CFF"
+                        >
+                           <mask
+                              id="mask0_2420_11122"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="32"
+                           >
+                              <rect width="32" height="32" fill="#D9D9D9" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11122)">
+                              <path
+                                 d="M16 18.667C15.6222 18.667 15.3056 18.5392 15.05 18.2837C14.7944 18.0281 14.6667 17.7114 14.6667 17.3337C14.6667 16.9559 14.7944 16.6392 15.05 16.3837C15.3056 16.1281 15.6222 16.0003 16 16.0003C16.3778 16.0003 16.6944 16.1281 16.95 16.3837C17.2056 16.6392 17.3333 16.9559 17.3333 17.3337C17.3333 17.7114 17.2056 18.0281 16.95 18.2837C16.6944 18.5392 16.3778 18.667 16 18.667ZM10.6667 18.667C10.2889 18.667 9.97222 18.5392 9.71667 18.2837C9.46111 18.0281 9.33333 17.7114 9.33333 17.3337C9.33333 16.9559 9.46111 16.6392 9.71667 16.3837C9.97222 16.1281 10.2889 16.0003 10.6667 16.0003C11.0444 16.0003 11.3611 16.1281 11.6167 16.3837C11.8722 16.6392 12 16.9559 12 17.3337C12 17.7114 11.8722 18.0281 11.6167 18.2837C11.3611 18.5392 11.0444 18.667 10.6667 18.667ZM21.3333 18.667C20.9556 18.667 20.6389 18.5392 20.3833 18.2837C20.1278 18.0281 20 17.7114 20 17.3337C20 16.9559 20.1278 16.6392 20.3833 16.3837C20.6389 16.1281 20.9556 16.0003 21.3333 16.0003C21.7111 16.0003 22.0278 16.1281 22.2833 16.3837C22.5389 16.6392 22.6667 16.9559 22.6667 17.3337C22.6667 17.7114 22.5389 18.0281 22.2833 18.2837C22.0278 18.5392 21.7111 18.667 21.3333 18.667ZM16 24.0003C15.6222 24.0003 15.3056 23.8725 15.05 23.617C14.7944 23.3614 14.6667 23.0448 14.6667 22.667C14.6667 22.2892 14.7944 21.9725 15.05 21.717C15.3056 21.4614 15.6222 21.3337 16 21.3337C16.3778 21.3337 16.6944 21.4614 16.95 21.717C17.2056 21.9725 17.3333 22.2892 17.3333 22.667C17.3333 23.0448 17.2056 23.3614 16.95 23.617C16.6944 23.8725 16.3778 24.0003 16 24.0003ZM10.6667 24.0003C10.2889 24.0003 9.97222 23.8725 9.71667 23.617C9.46111 23.3614 9.33333 23.0448 9.33333 22.667C9.33333 22.2892 9.46111 21.9725 9.71667 21.717C9.97222 21.4614 10.2889 21.3337 10.6667 21.3337C11.0444 21.3337 11.3611 21.4614 11.6167 21.717C11.8722 21.9725 12 22.2892 12 22.667C12 23.0448 11.8722 23.3614 11.6167 23.617C11.3611 23.8725 11.0444 24.0003 10.6667 24.0003ZM21.3333 24.0003C20.9556 24.0003 20.6389 23.8725 20.3833 23.617C20.1278 23.3614 20 23.0448 20 22.667C20 22.2892 20.1278 21.9725 20.3833 21.717C20.6389 21.4614 20.9556 21.3337 21.3333 21.3337C21.7111 21.3337 22.0278 21.4614 22.2833 21.717C22.5389 21.9725 22.6667 22.2892 22.6667 22.667C22.6667 23.0448 22.5389 23.3614 22.2833 23.617C22.0278 23.8725 21.7111 24.0003 21.3333 24.0003ZM6.66667 29.3337C5.93333 29.3337 5.30556 29.0725 4.78333 28.5503C4.26111 28.0281 4 27.4003 4 26.667V8.00033C4 7.26699 4.26111 6.63921 4.78333 6.11699C5.30556 5.59477 5.93333 5.33366 6.66667 5.33366H8V2.66699H10.6667V5.33366H21.3333V2.66699H24V5.33366H25.3333C26.0667 5.33366 26.6944 5.59477 27.2167 6.11699C27.7389 6.63921 28 7.26699 28 8.00033V26.667C28 27.4003 27.7389 28.0281 27.2167 28.5503C26.6944 29.0725 26.0667 29.3337 25.3333 29.3337H6.66667ZM6.66667 26.667H25.3333V13.3337H6.66667V26.667Z"
+                              />
+                           </g>
+                        </svg>
+                        <div>
+                           <h5 class="font-[600] text-base">Media Belajar</h5>
+                           <p class="font-[400] text-xs">
+                              Acara eksklusif yang ditawarkan oleh upscale dan
+                              eduwork
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           fill="#187CFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                        >
+                           <mask
+                              id="mask0_2420_11129"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="32"
+                           >
+                              <rect width="32" height="32" fill="#D9D9D9" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11129)">
+                              <path
+                                 d="M27.9987 22.6667V13.4667L15.9987 20L1.33203 12L15.9987 4L30.6654 12V22.6667H27.9987ZM15.9987 28L6.66536 22.9333V16.2667L15.9987 21.3333L25.332 16.2667V22.9333L15.9987 28Z"
+                              />
+                           </g>
+                        </svg>
+
+                        <div>
+                           <h5 class="font-[600] text-base">
+                              Automatic Report
+                           </h5>
+                           <p class="font-[400] text-xs">
+                              Pelajari materi dimana saja dan kapan saja
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           fill="#187CFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                        >
+                           <mask
+                              id="mask0_2420_11136"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="32"
+                           >
+                              <rect width="32" height="32" fill="#D9D9D9" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11136)">
+                              <path
+                                 d="M8 30.6667C6.88889 30.6667 5.94444 30.2778 5.16667 29.5C4.38889 28.7222 4 27.7778 4 26.6667C4 25.5556 4.38889 24.6111 5.16667 23.8333C5.94444 23.0556 6.88889 22.6667 8 22.6667C8.31111 22.6667 8.6 22.7 8.86667 22.7667C9.13333 22.8333 9.38889 22.9222 9.63333 23.0333L11.5333 20.6667C10.9111 19.9778 10.4778 19.2 10.2333 18.3333C9.98889 17.4667 9.93333 16.6 10.0667 15.7333L7.36667 14.8333C6.98889 15.3889 6.51111 15.8333 5.93333 16.1667C5.35556 16.5 4.71111 16.6667 4 16.6667C2.88889 16.6667 1.94444 16.2778 1.16667 15.5C0.388889 14.7222 0 13.7778 0 12.6667C0 11.5556 0.388889 10.6111 1.16667 9.83333C1.94444 9.05556 2.88889 8.66667 4 8.66667C5.11111 8.66667 6.05556 9.05556 6.83333 9.83333C7.61111 10.6111 8 11.5556 8 12.6667V12.9333L10.7 13.8667C11.1444 13.0667 11.7389 12.3889 12.4833 11.8333C13.2278 11.2778 14.0667 10.9222 15 10.7667V7.86667C14.1333 7.62222 13.4167 7.15 12.85 6.45C12.2833 5.75 12 4.93333 12 4C12 2.88889 12.3889 1.94444 13.1667 1.16667C13.9444 0.388889 14.8889 0 16 0C17.1111 0 18.0556 0.388889 18.8333 1.16667C19.6111 1.94444 20 2.88889 20 4C20 4.93333 19.7111 5.75 19.1333 6.45C18.5556 7.15 17.8444 7.62222 17 7.86667V10.7667C17.9333 10.9222 18.7722 11.2778 19.5167 11.8333C20.2611 12.3889 20.8556 13.0667 21.3 13.8667L24 12.9333V12.6667C24 11.5556 24.3889 10.6111 25.1667 9.83333C25.9444 9.05556 26.8889 8.66667 28 8.66667C29.1111 8.66667 30.0556 9.05556 30.8333 9.83333C31.6111 10.6111 32 11.5556 32 12.6667C32 13.7778 31.6111 14.7222 30.8333 15.5C30.0556 16.2778 29.1111 16.6667 28 16.6667C27.2889 16.6667 26.6389 16.5 26.05 16.1667C25.4611 15.8333 24.9889 15.3889 24.6333 14.8333L21.9333 15.7333C22.0667 16.6 22.0111 17.4611 21.7667 18.3167C21.5222 19.1722 21.0889 19.9556 20.4667 20.6667L22.3667 23C22.6111 22.8889 22.8667 22.8056 23.1333 22.75C23.4 22.6944 23.6889 22.6667 24 22.6667C25.1111 22.6667 26.0556 23.0556 26.8333 23.8333C27.6111 24.6111 28 25.5556 28 26.6667C28 27.7778 27.6111 28.7222 26.8333 29.5C26.0556 30.2778 25.1111 30.6667 24 30.6667C22.8889 30.6667 21.9444 30.2778 21.1667 29.5C20.3889 28.7222 20 27.7778 20 26.6667C20 26.2222 20.0722 25.7944 20.2167 25.3833C20.3611 24.9722 20.5556 24.6 20.8 24.2667L18.9 21.9C17.9889 22.4111 17.0167 22.6667 15.9833 22.6667C14.95 22.6667 13.9778 22.4111 13.0667 21.9L11.2 24.2667C11.4444 24.6 11.6389 24.9722 11.7833 25.3833C11.9278 25.7944 12 26.2222 12 26.6667C12 27.7778 11.6111 28.7222 10.8333 29.5C10.0556 30.2778 9.11111 30.6667 8 30.6667Z"
+                              />
+                           </g>
+                        </svg>
+                        <div>
+                           <h5 class="font-[600] text-base">Notification</h5>
+                           <p class="font-[400] text-xs">
+                              Networking dan diskusi dengan anggota lainnya
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <img src="assets/images/macbook.png" alt="macbook" />
+               </div>
+            </section>
+         </div>
+      </div>
+      <div class="relative">
+         <div class="absolute w-full h-[100px] top-[10px] z-10">
+            <div class="white-wave"></div>
+         </div>
+      </div>
+      <!-- End of LMS -->
+
+      <!-- FEATURE -->
+      <div class="pb-12 pt-32 bg-white">
+         <div class="container mx-auto">
+            <!-- Feature 1 -->
+            <section
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex w-full gap-x-10 gap-y-5 max-[768px]:flex-wrap justify-between items-center max-[768px]:justify-center mt-12 flex-nowrap"
+               >
+                  <img
+                     class="mx-auto hidden w-full max-[768px]:block"
+                     src="assets/images/feature-1.png"
+                     alt="feature images 1"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Mentoring Dashboard
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Dashboard mentoring merupakan pusat kendali yang
+                        membantu optimalisasi setiap aspek pembelajaran mentee.
+                     </p>
+                  </div>
+                  <img
+                     class="mx-auto hidden max-[1024px]:max-w-[500px] lg:w-full min-[768px]:block"
+                     src="assets/images/feature-1.png"
+                     alt="feature images 1"
+                  />
+               </div>
+            </section>
+
+            <!-- Feature 2 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex justify-between gap-x-10 gap-y-0 items-center max-[768px]:justify-center mt-12 max-[768px]:flex-wrap flex-nowrap"
+               >
+                  <img
+                     class="mx-auto max-[516px]:w-full max-[1024px]:max-w-[500px]"
+                     src="assets/images/feature-2.png"
+                     alt="feature images 2"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center text-right max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Media Belajar Interaktif
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Fitur ini memungkinkan kamu untuk menjelaskan konsep
+                        kompleks kepada mentee menggunakan media interaktif.
+                     </p>
+                  </div>
+               </div>
+            </section>
+
+            <!-- Feature 3 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex w-full gap-x-10 gap-y-0 max-[768px]:flex-wrap justify-between items-center max-[768px]:justify-center mt-12 flex-nowrap"
+               >
+                  <img
+                     class="mx-auto hidden w-full max-[768px]:block"
+                     src="assets/images/feature-3.png"
+                     alt="feature image 3"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Notifikasi Aktivitas
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Notifikasi kegiatan mentee merupakan fitur yang
+                        memungkinkan kamu mengelola dan mengontrol kemajuan
+                        mentee dengan mudah.
+                     </p>
+                  </div>
+                  <img
+                     class="mx-auto hidden max-[1024px]:max-w-[500px] lg:w-full min-[768px]:block"
+                     src="assets/images/feature-3.png"
+                     alt="feature images 3"
+                  />
+               </div>
+            </section>
+
+            <!-- Feature 4 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex justify-betwee gap-x-10 gap-y-0 items-center max-[768px]:justify-center mt-12 max-[768px]:flex-wrap flex-nowrap"
+               >
+                  <img
+                     class="mx-auto max-[1024px]:w-full"
+                     src="assets/images/feature-4.png"
+                     alt="benefit images 4"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center text-right max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        Laporan Rutin Otomatis
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Kami menggunakan laporan dengan penggunaan sistem yang
+                        terotomatisasi; karena waktu kamu berharga.
+                     </p>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <!-- End of Features -->
+
+      <!-- Langkapi profile -->
+      <div class="absolute w-full h-[100px] z-10">
+         <div class="wave"></div>
+      </div>
+      <div class="mt-16 pt-12 pb-24">
+         <div
+            class="container mx-auto bg-[url('assets/images/bg-blur.png')] bg-contain bg-center bg-no-repeat"
+         >
+            <section
+               class="lg:relative z-30 flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <h4
+                  class="relative z-30 text-center mb-12 text-4xl font-[600] text-[#303030]"
+               >
+                  Lengkapi Profil di Eduwork Community untuk Tunjukkan Keahlian
+                  Kamu
+               </h4>
+               <div
+                  class="flex max-[1024px]:flex-col items-center gap-8 flex-nowrap"
+               >
+                  <div
+                     class="grid grid-cols-1 max-[400px]:grid-cols-1 max-[1024px]:grid-cols-4 max-[768px]:grid-cols-2 max-[1024px]:w-full gap-6 w-[264px]"
+                  >
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="#187CFF"
+                        >
+                           <mask
+                              id="mask0_2420_11115"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                           >
+                              <rect width="32" height="32" fill="black" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11115)">
+                              <path
+                                 d="M6.66667 27.9997C5.93333 27.9997 5.30556 27.7386 4.78333 27.2163C4.26111 26.6941 4 26.0663 4 25.333C4 24.5997 4.26111 23.9719 4.78333 23.4497C5.30556 22.9275 5.93333 22.6663 6.66667 22.6663C7.4 22.6663 8.02778 22.9275 8.55 23.4497C9.07222 23.9719 9.33333 24.5997 9.33333 25.333C9.33333 26.0663 9.07222 26.6941 8.55 27.2163C8.02778 27.7386 7.4 27.9997 6.66667 27.9997ZM22.6667 27.9997C22.6667 25.4219 22.1778 23.0052 21.2 20.7497C20.2222 18.4941 18.8833 16.5163 17.1833 14.8163C15.4833 13.1163 13.5056 11.7775 11.25 10.7997C8.99444 9.8219 6.57778 9.33301 4 9.33301V5.33301C7.13333 5.33301 10.0778 5.92745 12.8333 7.11634C15.5889 8.30523 17.9889 9.9219 20.0333 11.9663C22.0778 14.0108 23.6944 16.4108 24.8833 19.1663C26.0722 21.9219 26.6667 24.8663 26.6667 27.9997H22.6667ZM14.6667 27.9997C14.6667 25.0441 13.6278 22.5275 11.55 20.4497C9.47222 18.3719 6.95556 17.333 4 17.333V13.333C6.04444 13.333 7.95556 13.7163 9.73333 14.483C11.5111 15.2497 13.0611 16.2941 14.3833 17.6163C15.7056 18.9386 16.75 20.4886 17.5167 22.2663C18.2833 24.0441 18.6667 25.9552 18.6667 27.9997H14.6667Z"
+                              />
+                           </g>
+                        </svg>
+
+                        <div>
+                           <h5 class="font-[600] text-base">Feeds</h5>
+                           <p class="font-[400] text-xs">
+                              Bagikan “Aha!” moments kamu di beranda; rayakan
+                              juga pencapaian koneksi kamu.
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="#187CFF"
+                        >
+                           <mask
+                              id="mask0_2420_11122"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="32"
+                           >
+                              <rect width="32" height="32" fill="#D9D9D9" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11122)">
+                              <path
+                                 d="M16 18.667C15.6222 18.667 15.3056 18.5392 15.05 18.2837C14.7944 18.0281 14.6667 17.7114 14.6667 17.3337C14.6667 16.9559 14.7944 16.6392 15.05 16.3837C15.3056 16.1281 15.6222 16.0003 16 16.0003C16.3778 16.0003 16.6944 16.1281 16.95 16.3837C17.2056 16.6392 17.3333 16.9559 17.3333 17.3337C17.3333 17.7114 17.2056 18.0281 16.95 18.2837C16.6944 18.5392 16.3778 18.667 16 18.667ZM10.6667 18.667C10.2889 18.667 9.97222 18.5392 9.71667 18.2837C9.46111 18.0281 9.33333 17.7114 9.33333 17.3337C9.33333 16.9559 9.46111 16.6392 9.71667 16.3837C9.97222 16.1281 10.2889 16.0003 10.6667 16.0003C11.0444 16.0003 11.3611 16.1281 11.6167 16.3837C11.8722 16.6392 12 16.9559 12 17.3337C12 17.7114 11.8722 18.0281 11.6167 18.2837C11.3611 18.5392 11.0444 18.667 10.6667 18.667ZM21.3333 18.667C20.9556 18.667 20.6389 18.5392 20.3833 18.2837C20.1278 18.0281 20 17.7114 20 17.3337C20 16.9559 20.1278 16.6392 20.3833 16.3837C20.6389 16.1281 20.9556 16.0003 21.3333 16.0003C21.7111 16.0003 22.0278 16.1281 22.2833 16.3837C22.5389 16.6392 22.6667 16.9559 22.6667 17.3337C22.6667 17.7114 22.5389 18.0281 22.2833 18.2837C22.0278 18.5392 21.7111 18.667 21.3333 18.667ZM16 24.0003C15.6222 24.0003 15.3056 23.8725 15.05 23.617C14.7944 23.3614 14.6667 23.0448 14.6667 22.667C14.6667 22.2892 14.7944 21.9725 15.05 21.717C15.3056 21.4614 15.6222 21.3337 16 21.3337C16.3778 21.3337 16.6944 21.4614 16.95 21.717C17.2056 21.9725 17.3333 22.2892 17.3333 22.667C17.3333 23.0448 17.2056 23.3614 16.95 23.617C16.6944 23.8725 16.3778 24.0003 16 24.0003ZM10.6667 24.0003C10.2889 24.0003 9.97222 23.8725 9.71667 23.617C9.46111 23.3614 9.33333 23.0448 9.33333 22.667C9.33333 22.2892 9.46111 21.9725 9.71667 21.717C9.97222 21.4614 10.2889 21.3337 10.6667 21.3337C11.0444 21.3337 11.3611 21.4614 11.6167 21.717C11.8722 21.9725 12 22.2892 12 22.667C12 23.0448 11.8722 23.3614 11.6167 23.617C11.3611 23.8725 11.0444 24.0003 10.6667 24.0003ZM21.3333 24.0003C20.9556 24.0003 20.6389 23.8725 20.3833 23.617C20.1278 23.3614 20 23.0448 20 22.667C20 22.2892 20.1278 21.9725 20.3833 21.717C20.6389 21.4614 20.9556 21.3337 21.3333 21.3337C21.7111 21.3337 22.0278 21.4614 22.2833 21.717C22.5389 21.9725 22.6667 22.2892 22.6667 22.667C22.6667 23.0448 22.5389 23.3614 22.2833 23.617C22.0278 23.8725 21.7111 24.0003 21.3333 24.0003ZM6.66667 29.3337C5.93333 29.3337 5.30556 29.0725 4.78333 28.5503C4.26111 28.0281 4 27.4003 4 26.667V8.00033C4 7.26699 4.26111 6.63921 4.78333 6.11699C5.30556 5.59477 5.93333 5.33366 6.66667 5.33366H8V2.66699H10.6667V5.33366H21.3333V2.66699H24V5.33366H25.3333C26.0667 5.33366 26.6944 5.59477 27.2167 6.11699C27.7389 6.63921 28 7.26699 28 8.00033V26.667C28 27.4003 27.7389 28.0281 27.2167 28.5503C26.6944 29.0725 26.0667 29.3337 25.3333 29.3337H6.66667ZM6.66667 26.667H25.3333V13.3337H6.66667V26.667Z"
+                              />
+                           </g>
+                        </svg>
+                        <div>
+                           <h5 class="font-[600] text-base">My Class</h5>
+                           <p class="font-[400] text-xs">
+                              Dapatkan update kelas dan event secara real-time
+                              dan mudah
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           fill="#187CFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                        >
+                           <mask
+                              id="mask0_2420_11129"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="32"
+                           >
+                              <rect width="32" height="32" fill="#D9D9D9" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11129)">
+                              <path
+                                 d="M27.9987 22.6667V13.4667L15.9987 20L1.33203 12L15.9987 4L30.6654 12V22.6667H27.9987ZM15.9987 28L6.66536 22.9333V16.2667L15.9987 21.3333L25.332 16.2667V22.9333L15.9987 28Z"
+                              />
+                           </g>
+                        </svg>
+
+                        <div>
+                           <h5 class="font-[600] text-base">My Events</h5>
+                           <p class="font-[400] text-xs">
+                              Pelajari materi mentor dimana saja dan kapan saja
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="hovered-card flex p-5 gap-4 bg-white rounded-[10px] hover:text-white hover:bg-primary shadow-card-custom"
+                     >
+                        <svg
+                           class="hovered-icon"
+                           width="32"
+                           height="32"
+                           viewBox="0 0 32 32"
+                           fill="#187CFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                        >
+                           <mask
+                              id="mask0_2420_11136"
+                              style="mask-type: alpha"
+                              maskUnits="userSpaceOnUse"
+                              x="0"
+                              y="0"
+                              width="32"
+                              height="32"
+                           >
+                              <rect width="32" height="32" fill="#D9D9D9" />
+                           </mask>
+                           <g mask="url(#mask0_2420_11136)">
+                              <path
+                                 d="M8 30.6667C6.88889 30.6667 5.94444 30.2778 5.16667 29.5C4.38889 28.7222 4 27.7778 4 26.6667C4 25.5556 4.38889 24.6111 5.16667 23.8333C5.94444 23.0556 6.88889 22.6667 8 22.6667C8.31111 22.6667 8.6 22.7 8.86667 22.7667C9.13333 22.8333 9.38889 22.9222 9.63333 23.0333L11.5333 20.6667C10.9111 19.9778 10.4778 19.2 10.2333 18.3333C9.98889 17.4667 9.93333 16.6 10.0667 15.7333L7.36667 14.8333C6.98889 15.3889 6.51111 15.8333 5.93333 16.1667C5.35556 16.5 4.71111 16.6667 4 16.6667C2.88889 16.6667 1.94444 16.2778 1.16667 15.5C0.388889 14.7222 0 13.7778 0 12.6667C0 11.5556 0.388889 10.6111 1.16667 9.83333C1.94444 9.05556 2.88889 8.66667 4 8.66667C5.11111 8.66667 6.05556 9.05556 6.83333 9.83333C7.61111 10.6111 8 11.5556 8 12.6667V12.9333L10.7 13.8667C11.1444 13.0667 11.7389 12.3889 12.4833 11.8333C13.2278 11.2778 14.0667 10.9222 15 10.7667V7.86667C14.1333 7.62222 13.4167 7.15 12.85 6.45C12.2833 5.75 12 4.93333 12 4C12 2.88889 12.3889 1.94444 13.1667 1.16667C13.9444 0.388889 14.8889 0 16 0C17.1111 0 18.0556 0.388889 18.8333 1.16667C19.6111 1.94444 20 2.88889 20 4C20 4.93333 19.7111 5.75 19.1333 6.45C18.5556 7.15 17.8444 7.62222 17 7.86667V10.7667C17.9333 10.9222 18.7722 11.2778 19.5167 11.8333C20.2611 12.3889 20.8556 13.0667 21.3 13.8667L24 12.9333V12.6667C24 11.5556 24.3889 10.6111 25.1667 9.83333C25.9444 9.05556 26.8889 8.66667 28 8.66667C29.1111 8.66667 30.0556 9.05556 30.8333 9.83333C31.6111 10.6111 32 11.5556 32 12.6667C32 13.7778 31.6111 14.7222 30.8333 15.5C30.0556 16.2778 29.1111 16.6667 28 16.6667C27.2889 16.6667 26.6389 16.5 26.05 16.1667C25.4611 15.8333 24.9889 15.3889 24.6333 14.8333L21.9333 15.7333C22.0667 16.6 22.0111 17.4611 21.7667 18.3167C21.5222 19.1722 21.0889 19.9556 20.4667 20.6667L22.3667 23C22.6111 22.8889 22.8667 22.8056 23.1333 22.75C23.4 22.6944 23.6889 22.6667 24 22.6667C25.1111 22.6667 26.0556 23.0556 26.8333 23.8333C27.6111 24.6111 28 25.5556 28 26.6667C28 27.7778 27.6111 28.7222 26.8333 29.5C26.0556 30.2778 25.1111 30.6667 24 30.6667C22.8889 30.6667 21.9444 30.2778 21.1667 29.5C20.3889 28.7222 20 27.7778 20 26.6667C20 26.2222 20.0722 25.7944 20.2167 25.3833C20.3611 24.9722 20.5556 24.6 20.8 24.2667L18.9 21.9C17.9889 22.4111 17.0167 22.6667 15.9833 22.6667C14.95 22.6667 13.9778 22.4111 13.0667 21.9L11.2 24.2667C11.4444 24.6 11.6389 24.9722 11.7833 25.3833C11.9278 25.7944 12 26.2222 12 26.6667C12 27.7778 11.6111 28.7222 10.8333 29.5C10.0556 30.2778 9.11111 30.6667 8 30.6667Z"
+                              />
+                           </g>
+                        </svg>
+                        <div>
+                           <h5 class="font-[600] text-base">About</h5>
+                           <p class="font-[400] text-xs">
+                              Fitur untuk menyimpan semua rekam jejak
+                              pembelajaran mentee
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <img
+                     class="shadow-card-custom rounded-3xl"
+                     src="assets/images/profile.png"
+                     alt="macbook"
+                  />
+               </div>
+            </section>
+         </div>
+      </div>
+      <div class="relative">
+         <div class="absolute w-full h-[100px] top-[10px] z-10">
+            <div class="white-wave"></div>
+         </div>
+      </div>
+      <!-- end of lengkapi profile -->
+
+      <!-- Feature lanjutan -->
+      <div class="pb-12 pt-32 bg-white">
+         <div class="container mx-auto">
+            <!-- Feature 5 -->
+            <section
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex w-full gap-x-10 gap-y-5 max-[768px]:flex-wrap justify-between items-center max-[768px]:justify-center mt-12 flex-nowrap"
+               >
+                  <img
+                     class="mx-auto hidden w-full max-[768px]:block"
+                     src="assets/images/feature-5.png"
+                     alt="feature images 5"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">Feeds</h5>
+                     <p class="text-xl font-[400]">
+                        Buat engagement komunitas melejit dengan strategi
+                        menjadi Content Creator! Tonjolkan ekspertisi kamu lewat
+                        konten textual dan video.
+                     </p>
+                  </div>
+                  <img
+                     class="mx-auto hidden max-[1024px]:max-w-[500px] lg:w-full min-[768px]:block"
+                     src="assets/images/feature-5.png"
+                     alt="feature images 5"
+                  />
+               </div>
+            </section>
+
+            <!-- Feature 6 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex justify-between gap-x-10 gap-y-0 items-center max-[768px]:justify-center mt-12 max-[768px]:flex-wrap flex-nowrap"
+               >
+                  <img
+                     class="mx-auto max-[516px]:w-full max-[1024px]:max-w-[500px]"
+                     src="assets/images/feature-6.png"
+                     alt="feature images 6"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center text-right max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        My Class
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Kamu bisa membagikan konten audio-visual kepada para
+                        mentee kamu hanya dengan satu kali klik.
+                     </p>
+                  </div>
+               </div>
+            </section>
+
+            <!-- Feature 7 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex w-full gap-x-10 gap-y-0 max-[768px]:flex-wrap justify-between items-center max-[768px]:justify-center mt-12 flex-nowrap"
+               >
+                  <img
+                     class="mx-auto hidden w-full max-[768px]:block"
+                     src="assets/images/feature-7.png"
+                     alt="feature image 7"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">
+                        My Events
+                     </h5>
+                     <p class="text-xl font-[400]">
+                        Rilis webinar, Live mentoring, dan event-event lainnya
+                        yang bisa bantu menaikkan pamor komunitasmu!
+                     </p>
+                  </div>
+                  <img
+                     class="mx-auto hidden max-[1024px]:max-w-[500px] lg:w-full min-[768px]:block"
+                     src="assets/images/feature-7.png"
+                     alt="feature images 7"
+                  />
+               </div>
+            </section>
+
+            <!-- Feature 8 -->
+            <section
+               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+            >
+               <div
+                  class="flex justify-betwee gap-x-10 gap-y-0 items-center max-[768px]:justify-center mt-12 max-[768px]:flex-wrap flex-nowrap"
+               >
+                  <img
+                     class="mx-auto max-[516px]:w-full max-[1024px]:max-w-[500px]"
+                     src="assets/images/feature-8.png"
+                     alt="benefit images 8"
+                  />
+                  <div
+                     class="flex flex-col items-left gap-4 max-[768px]:text-center max-[768px]:items-center text-right max-w-[500px]"
+                  >
+                     <h5 class="font-[700] text-3xl text-[#303030]">About</h5>
+                     <p class="text-xl font-[400]">
+                        Ceritakan citra profesional kamu, dan jangan lupa untuk
+                        cantumkan portofolio dan akun sosial media lainnya.
+                     </p>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </div>
+      <!-- end of feature lanjutan -->
 
       <!-- FAQ -->
       <div class="container mx-auto">
@@ -695,6 +1659,7 @@
          </section>
       </div>
       <!-- End of FAQ -->
+
       <!-- Footer section -->
       <section
          class="relative w-full h-[1270px] md:h-[1070px] pb-[20px] md:pb-0"
@@ -831,7 +1796,7 @@
                               Submit your email for new updates
                            </li></a
                         >
-                        <li class="flex flex-row">
+                        <!-- <li class="flex flex-row">
                            <input
                               class="rounded-l-[5px] bg-[#f6fcff] w-full md:w-[190.01px] h-[55px] border border-white text-[#404040]"
                               type="email"
@@ -847,7 +1812,7 @@
                                  src="./images/svg/mail.svg"
                               />
                            </button>
-                        </li>
+                        </li> -->
                      </ul>
                   </div>
                </div>
