@@ -551,3 +551,10 @@ html {
    width: 70px;
    height: 70px;
 }
+
+.footer-background {
+   background: var(
+      --gradient,
+      linear-gradient(142deg, #5297f2 0.09%, #0f55dd 100.09%)
+   );
+}
