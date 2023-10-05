@@ -20,32 +20,60 @@
       <!-- Style Swipper -->
       <style>
          .swiper {
-            width: 1200px;
+            width: 1016px;
             padding-bottom: 80px;
+            height: 700px;
+         }
+         .swiper-wrapper {
+            align-items: center;
+            justify-content: start;
          }
          .swiper-slide {
             border-radius: 24px;
+            width: 312px;
+            height: 420px;
             padding: 28px;
             background-color: #fff;
             text-align: center;
+            justify-content: center;
+            align-items: center;
+            filter: blur(3px);
          }
-         .swiper-slide-active {
-            width: 317px;
+         .swiper-slide-next h5 {
+            font-size: 28px;
+            line-height: 36px;
+            font-weight: 700;
+         }
+         .swiper-slide-next h6 {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 500;
+            color: #3f85ec;
+         }
+         .swiper-slide-next p {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 400;
+         }
+         .swiper-slide-next {
+            width: 390px;
+            height: 530px;
+            padding: 28px;
+            position: relative;
+            filter: blur(0px);
          }
          .swiper-slide .img-profile {
             width: 335px;
             margin: auto;
          }
-         .swiper-slide-active p {
-            display: block;
-         }
          @media only screen and (max-width: 768px) {
             .swiper {
-               width: 100%;
+               width: 90%;
                gap: 0px;
             }
             .swiper-wrapper {
                width: 100%;
+               align-items: start;
                margin-bottom: 20px;
                gap: 0;
             }
@@ -53,15 +81,41 @@
                width: 100%;
                margin-left: 0;
                margin-right: 0;
-               padding: 8px;
+               filter: blur(0px);
+               height: 100%;
+            }
+            .swiper-slide-next {
+               filter: blur(0px);
+               height: 100%;
             }
             .swiper-slide-active {
                width: 100%;
+            }
+
+            .swiper-slide h5 {
+               font-size: 28px;
+               line-height: 36px;
+               font-weight: 700;
+            }
+            .swiper-slide h6 {
+               font-size: 20px;
+               line-height: 28px;
+               font-weight: 500;
+               color: #3f85ec;
+            }
+            .swiper-slide p {
+               font-size: 20px;
+               line-height: 28px;
+               font-weight: 400;
+            }
+            .swiper-slide .img-profile {
+               width: 100%;
+               margin: auto;
             }
          }
          @media only screen and (max-width: 1280px) {
             .swiper {
-               width: 100%;
+               width: 90%;
                gap: 0px;
             }
             .swiper-wrapper {
@@ -73,10 +127,36 @@
                width: 100%;
                margin-left: 0;
                margin-right: 0;
-               padding: 8px;
+               filter: blur(0px);
+               height: 100%;
+            }
+            .swiper-slide-next {
+               filter: blur(0px);
+               height: 100%;
             }
             .swiper-slide-active {
                width: 100%;
+            }
+
+            .swiper-slide h5 {
+               font-size: 28px;
+               line-height: 36px;
+               font-weight: 700;
+            }
+            .swiper-slide h6 {
+               font-size: 20px;
+               line-height: 28px;
+               font-weight: 500;
+               color: #3f85ec;
+            }
+            .swiper-slide p {
+               font-size: 20px;
+               line-height: 28px;
+               font-weight: 400;
+            }
+            .swiper-slide .img-profile {
+               width: 100%;
+               margin: auto;
             }
          }
       </style>
@@ -227,7 +307,7 @@
          ></div>
       </div>
       <div
-         class="xl:bg-center xl:bg-[url('./images/lp-mentor/bg-hero.png')] bg-[url('./images/lp-mentor/bg-hero-responsive.png')] bg-no-repeat bg-[top_right_-20rem] md:bg-[top_right_-10rem] 2xl:bg-contain bg-cover"
+         class="xl:bg-center xl:bg-[url('./images/lp-mentor/bg-hero.png')] bg-white sm:bg-[url('./images/lp-mentor/bg-hero-responsive.png')] bg-no-repeat bg-[top_right_-20rem] md:bg-[top_right_-10rem] 2xl:bg-contain bg-cover"
       >
          <div class="container mx-auto m-0">
             <section id="Hero" class="md:mt-20 mt-14 w-full h-[800px]">
@@ -258,13 +338,13 @@
                         <div
                            class="flex justify-start gap-6 my-6 md:flex-nowrap flex-wrap"
                         >
-                           <div class="pr-6 border-r-2">
+                           <div class="pr-6 border-r-2 border-r-slate-300">
                               <h4 class="font-[700] text-[#187CFF] text-[28px]">
                                  1691+
                               </h4>
                               <p class="font-[500] text-sm">Member bergabung</p>
                            </div>
-                           <div class="pr-6 border-r-2">
+                           <div class="pr-6 border-r-2 border-r-slate-300">
                               <h4 class="font-[700] text-[#187CFF] text-[28px]">
                                  59+
                               </h4>
@@ -280,7 +360,7 @@
 
                         <form
                            action="#"
-                           class="shadow-input h-[72px] flex bg-white p-2 rounded-3xl max-w-[480px] gap-2"
+                           class="shadow-input h-[72px] flex bg-white p-2 rounded-3xl w-full sm:max-w-[480px] gap-2"
                         >
                            <div class="p-4 w-full flex gap-2 items-center">
                               <img
@@ -387,7 +467,7 @@
       <!-- End of Partner -->
 
       <!-- Industri -->
-      <div class="bg-white py-20">
+      <div class="bg-white pt-20 sm:pb-20 pb-10">
          <div class="container mx-auto">
             <section
                class="flex flex-col items-center w-[90%] h-fit mx-auto lg:w-[1016px]"
@@ -401,15 +481,213 @@
                   Saatnya untuk lampaui batasan. Bantu para member komunitas
                   menyusun dan mencapai target karir mereka.
                </p>
-               <img
-                  loading="lazy"
-                  class="mt-10"
-                  src="images/lp-mentor/bg-industri.png"
-                  alt="bg-industri"
-               />
+               <div class="my-10 flex flex-col gap-y-6 relative">
+                  <div
+                     class="bg-white-gradient bg-bottom w-full h-full absolute"
+                  ></div>
+                  <div class="flex justify-center gap-6 flex-wrap">
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-green-200">
+                           <img
+                              src="images/lp-mentor-icon/data-science.svg"
+                              alt="data-science-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Data Science</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              280 mentors
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-purple-200">
+                           <img
+                              src="images/lp-mentor-icon/engineer.svg"
+                              alt="engineer-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Engineering</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              2019 mentors
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-purple-200">
+                           <img
+                              src="images/lp-mentor-icon/engineer.svg"
+                              alt="Developer-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Developer</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              2019 mentors
+                           </p>
+                        </div>
+                     </div>
+
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-orange-200">
+                           <img
+                              src="images/lp-mentor-icon/marketing.svg"
+                              alt="marketing-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Marketing</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              1594 mentors
+                           </p>
+                        </div>
+                     </div>
+
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-blue-200">
+                           <img
+                              src="images/lp-mentor-icon/human-res.svg"
+                              alt="human-resource-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Human Resource</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              4279 mentors
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-blue-200">
+                           <img
+                              src="images/lp-mentor-icon/human-res.svg"
+                              alt="machine-learning-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Machine Learning</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              4279 mentors
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-purple-200">
+                           <img
+                              src="images/lp-mentor-icon/graphic-design.svg"
+                              alt="graphic-design"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Graphic design</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              11157 mentors
+                           </p>
+                        </div>
+                     </div>
+
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white sm:shadow-box-custom shadow-none rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-purple-200">
+                           <img
+                              src="images/lp-mentor-icon/graphic-design.svg"
+                              alt="ui-ux-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">UI/UX Design</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              11157 mentors
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="flex gap-4 py-5 px-6 bg-white sm:shadow-box-custom shadow-none rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-cyan-200">
+                           <img
+                              src="images/lp-mentor-icon/copy-writing.svg"
+                              alt="machine-learning-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Copywriting</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              519 mentors
+                           </p>
+                        </div>
+                     </div>
+                     <div
+                        class="sm:flex gap-4 py-5 px-6 hidden bg-white shadow-box-custom rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-cyan-200">
+                           <img
+                              src="images/lp-mentor-icon/product-res.svg"
+                              alt="product-res-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Product Research</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              3092 mentors
+                           </p>
+                        </div>
+                     </div>
+
+                     <div
+                        class="sm:flex gap-4 py-5 px-6 hidden bg-white rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-green-200">
+                           <img
+                              src="images/lp-mentor-icon/data-science.svg"
+                              alt="data-science-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Data Science</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              280 mentors
+                           </p>
+                        </div>
+                     </div>
+
+                     <div
+                        class="sm:flex gap-4 py-5 px-6 hidden bg-white rounded-2xl"
+                     >
+                        <div class="p-[10px] rounded-full bg-orange-200">
+                           <img
+                              src="images/lp-mentor-icon/marketing.svg"
+                              alt="marketing-icon"
+                           />
+                        </div>
+                        <div>
+                           <h6 class="text-xl font-[700]">Marketing</h6>
+                           <p class="text-sm font-[400] text-[#6B7B8A]">
+                              1594 mentors
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
                <a
                   href="#"
-                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[192px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-full sm:w-[192px] text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                >
                   Jelajah Industri
                </a>
@@ -419,7 +697,7 @@
       <!-- End of industri -->
 
       <!-- WFH -->
-      <div class="pt-16 md:pt-20 pb-32 md:pb-20">
+      <div class="pt-10 sm:pt-20 pb-32 sm:pb-20">
          <div class="container mx-auto">
             <section
                class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
@@ -514,7 +792,7 @@
                <div class="relative w-full mx-auto">
                   <a
                      href="#"
-                     class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 absolute left-1/2 transform -translate-x-1/2 top-10 w-[200px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                     class="hover:bg-primary/80 focus:ring-4 text-center w-full focus:outline-none focus:ring-blue-300 absolute left-1/2 transform -translate-x-1/2 top-10 sm:w-[200px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                   >
                      Daftar Sekarang
                   </a>
@@ -529,7 +807,7 @@
 
       <!-- Why eduwork-->
       <div
-         class="pt-20 pb-24 bg-white bg-[url('images/lp-mentor/bg-line.png')] bg-cover bg-no-repeat"
+         class="pt-10 sm:pt-20 pb-20 sm:pb-24 bg-white bg-[url('images/lp-mentor/bg-line.png')] bg-cover bg-no-repeat"
       >
          <div class="container mx-auto">
             <section
@@ -667,7 +945,7 @@
                </div>
                <a
                   href="#"
-                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[250px] text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                  class="hover:bg-primary/80 focus:ring-4 text-center focus:outline-none focus:ring-blue-300 w-full sm:w-[250px] text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                >
                   Mulai sebagai mentor
                </a>
@@ -680,7 +958,7 @@
       <div class="absolute w-full h-[100px] z-10">
          <div class="wave"></div>
       </div>
-      <div class="mt-16 pt-12 pb-12">
+      <div class="sm:mt-16 mt-10 pt-12 pb-12">
          <div class="container mx-auto">
             <section
                class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
@@ -698,7 +976,7 @@
                </p>
                <a
                   href="#"
-                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[250px] my-8 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                  class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-full sm:w-[250px] my-8 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                >
                   Daftar Sebagai Mentor
                </a>
@@ -719,7 +997,7 @@
       <!-- End of Waktu luang jadi Cuan -->
 
       <!-- Benefit -->
-      <div class="pb-12 pt-32 bg-white">
+      <div class="pb-12 pt-20 sm:pt-32 bg-white">
          <div class="container mx-auto">
             <!-- Benefit 1 -->
             <section
@@ -752,7 +1030,7 @@
                         orang.
                      </p>
                      <div
-                        class="flex gap-x-8 gap-y-4 mt-2 flex-wrap justify-center md:flex-nowrap"
+                        class="sm:flex grid gap-x-8 gap-y-4 mt-2 sm:flex-wrap sm:justify-center md:flex-nowrap"
                      >
                         <div class="flex gap-2 items-start">
                            <img
@@ -781,7 +1059,7 @@
 
             <!-- Benefit 2 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex md:ustify-between gap-x-10 gap-y-0 items-center justify-center mt-12 flex-wrap md:flex-nowrap"
@@ -804,7 +1082,7 @@
                         traffic ke event berbayar kamu.
                      </p>
                      <div
-                        class="flex gap-x-8 gap-y-4 mt-2 flex-wrap justify-center md:flex-nowrap"
+                        class="sm:flex grid gap-x-8 gap-y-4 mt-2 sm:flex-wrap sm:justify-center md:flex-nowrap"
                      >
                         <div class="flex gap-2 items-start">
                            <img
@@ -827,7 +1105,7 @@
 
             <!-- benefit 3 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex w-full gap-x-10 gap-y-0 flex-wrap md:justify-between items-center justify-center mt-12 md:flex-nowrap"
@@ -850,7 +1128,7 @@
                         efektifitas kamu selama mentoring!
                      </p>
                      <div
-                        class="flex gap-x-8 gap-y-4 mt-2 flex-wrap justify-center md:flex-nowrap"
+                        class="sm:flex grid gap-x-8 gap-y-4 mt-2 sm:flex-wrap sm:justify-center md:flex-nowrap"
                      >
                         <div class="flex gap-2 items-start">
                            <img
@@ -879,7 +1157,7 @@
 
             <!-- Benefit 4 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex md:justify-between gap-x-10 gap-y-0 items-center justify-center mt-12 flex-wrap md:flex-nowrap"
@@ -902,7 +1180,7 @@
                         berikan rekomendasi; tanpa dipungut biaya.
                      </p>
                      <div
-                        class="flex gap-x-8 gap-y-4 mt-2 flex-wrap justify-center md:flex-nowrap"
+                        class="sm:flex grid gap-x-8 gap-y-4 mt-2 sm:flex-wrap sm:justify-center md:flex-nowrap"
                      >
                         <div class="flex gap-2 items-start">
                            <img
@@ -930,7 +1208,7 @@
       <div class="absolute w-full h-[100px] z-10">
          <div class="wave"></div>
       </div>
-      <div class="mt-16 pt-12 pb-24">
+      <div class="mt-10 sm:mt-16 pt-12 pb-24">
          <div
             class="container mx-auto bg-[url('images/lp-mentor/bg-blur.png')] bg-contain bg-center bg-no-repeat"
          >
@@ -1110,7 +1388,7 @@
       <!-- End of LMS -->
 
       <!-- FEATURE -->
-      <div class="pb-12 pt-20 md:pt-32 bg-white">
+      <div class="pb-12 pt-20 sm:pt-32 bg-white">
          <div class="container mx-auto">
             <!-- Feature 1 -->
             <section
@@ -1147,7 +1425,7 @@
 
             <!-- Feature 2 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex md:justify-between gap-x-10 gap-y-0 items-center justify-center mt-12 flex-wrap md:flex-nowrap"
@@ -1174,7 +1452,7 @@
 
             <!-- Feature 3 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex w-full gap-x-10 gap-y-0 flex-wrap md:justify-between items-center justify-center mt-12 md:flex-nowrap"
@@ -1208,7 +1486,7 @@
 
             <!-- Feature 4 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex md:justify-between gap-x-10 gap-y-0 items-center justify-center mt-12 flex-wrap md:flex-nowrap"
@@ -1242,7 +1520,7 @@
             <div class="wave"></div>
          </div>
       </div>
-      <div class="mt-16 pt-12 pb-20 md:pb-24">
+      <div class="mt-10 sm:mt-16 pt-12 pb-20 md:pb-24">
          <div
             class="container mx-auto bg-[url('images/lp-mentor/bg-blur.png')] bg-contain bg-center bg-no-repeat"
          >
@@ -1461,7 +1739,7 @@
 
             <!-- Feature 6 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex md:justify-between gap-x-10 gap-y-0 items-center justify-center mt-12 flex-wrap md:flex-nowrap"
@@ -1488,7 +1766,7 @@
 
             <!-- Feature 7 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex w-full gap-x-10 gap-y-0 flex-wrap md:justify-between items-center justify-center mt-12 md:flex-nowrap"
@@ -1521,7 +1799,7 @@
 
             <!-- Feature 8 -->
             <section
-               class="mt-10 lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
+               class="lg:relative flex flex-col justify-center items-center w-[90%] md:w-full mx-auto lg:w-[1016px]"
             >
                <div
                   class="flex md:justify-between gap-x-10 gap-y-0 items-center justify-center mt-12 flex-wrap md:flex-nowrap"
@@ -1551,7 +1829,7 @@
 
       <!-- Langkah jadi mentor -->
       <div
-         class="pt-14 pb-16 mb:pb-24 bg-white bg-[url(images/lp-mentor/bg-line.png)] bg-cover bg-no-repeat"
+         class="pt-10 sm:pt-14 pb-16 mb:pb-24 bg-white bg-[url(images/lp-mentor/bg-line.png)] bg-cover bg-no-repeat"
       >
          <div class="container mx-auto">
             <section
@@ -1701,7 +1979,7 @@
             class="lg:relative flex flex-col justify-center items-start w-[90%] md:w-full mx-auto"
          >
             <h4
-               class="max-w-[1200px] mx-auto text-left relative z-30 mb-3 text-3xl md:text-4xl font-[600] text-[#303030]"
+               class="text-center mb-3 text-3xl mx-auto md:text-4xl font-[600] text-[#303030]"
             >
                Lihat Perjalanan Sukses <br />
                <span class="text-primary">Para Mentor Eduwork</span>
@@ -1710,22 +1988,35 @@
             <div class="swiper mySwiper">
                <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                     <div
-                        class="shadow-lg p-5 max-[1200px]:p-2 max-[400]:p-1 rounded-3xl"
-                     >
+                     <div class="shadow-lg p-5 rounded-3xl">
+                        <img
+                           class="img-profile"
+                           src="images/lp-mentor/test-mentor3.png"
+                           alt="testi-img"
+                        />
+                        <div>
+                           <h5 class="mt-8 text-[#303030]">Adi Utomo</h5>
+                           <h6 class="mt-2 text-[#3F85EC]">
+                              National Banking Company
+                           </h6>
+                           <p class="mt-6 text-[#676767]">
+                              Kami senang bisa terhubung dengan talent pool dari
+                              platform serba ada. Great partnership!
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="shadow-lg p-5 rounded-3xl">
                         <img
                            class="img-profile"
                            src="images/lp-mentor/test-mentor1.png"
                            alt="testi-img"
                         />
                         <div>
-                           <h5 class="mt-8 font-[700] text-2xl text-[#303030]">
-                              Ari Lasso Matua
-                           </h5>
-                           <h6 class="mt-2 font-[500] text-xl text-[#3F85EC]">
-                              UI/UX Designer
-                           </h6>
-                           <p class="mt-6 font-[400] text-xl text-[#676767]">
+                           <h5 class="mt-8 text-[#303030]">Ari Lasso Matua</h5>
+                           <h6 class="mt-2 text-[#3F85EC]">UI/UX Designer</h6>
+                           <p class="mt-6 text-[#676767]">
                               Saya adalah mentor freelance. Namun, penghasilan
                               saya menjadi 25% lebih tinggi setelah bergabung di
                               Eduwork.
@@ -1734,22 +2025,35 @@
                      </div>
                   </div>
                   <div class="swiper-slide">
-                     <div
-                        class="shadow-lg p-5 max-[1200px]:p-2 max-[400]:p-1 rounded-3xl"
-                     >
+                     <div class="shadow-lg p-5 rounded-3xl">
+                        <img
+                           class="img-profile"
+                           src="images/lp-mentor/test-mentor2.png"
+                           alt="testi-img"
+                        />
+                        <div>
+                           <h5 class="mt-8 text-[#303030]">Urang Kali</h5>
+                           <h6 class="mt-2 text-[#3F85EC]">
+                              Fullstack Developer
+                           </h6>
+                           <p class="mt-6 text-[#676767]">
+                              The best part is saya gak perlu balas chat
+                              satu-persatu untuk tiap jadwal live.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="shadow-lg p-5 rounded-3xl">
                         <img
                            class="img-profile"
                            src="images/lp-mentor/test-mentor1.png"
                            alt="testi-img"
                         />
                         <div>
-                           <h5 class="mt-8 font-[700] text-2xl text-[#303030]">
-                              Ari Lasso Matua
-                           </h5>
-                           <h6 class="mt-2 font-[500] text-xl text-[#3F85EC]">
-                              UI/UX Designer
-                           </h6>
-                           <p class="mt-6 font-[400] text-xl text-[#676767]">
+                           <h5 class="mt-8 text-[#303030]">Ari Lasso Matua</h5>
+                           <h6 class="mt-2 text-[#3F85EC]">UI/UX Designer</h6>
+                           <p class="mt-6 text-[#676767]">
                               Saya adalah mentor freelance. Namun, penghasilan
                               saya menjadi 25% lebih tinggi setelah bergabung di
                               Eduwork.
@@ -1758,97 +2062,39 @@
                      </div>
                   </div>
                   <div class="swiper-slide">
-                     <div
-                        class="shadow-lg p-5 max-[1200px]:p-2 max-[400]:p-1 rounded-3xl"
-                     >
+                     <div class="shadow-lg p-5 rounded-3xl">
                         <img
                            class="img-profile"
-                           src="images/lp-mentor/test-mentor1.png"
+                           src="images/lp-mentor/test-mentor2.png"
                            alt="testi-img"
                         />
                         <div>
-                           <h5 class="mt-8 font-[700] text-2xl text-[#303030]">
-                              Ari Lasso Matua
-                           </h5>
-                           <h6 class="mt-2 font-[500] text-xl text-[#3F85EC]">
-                              UI/UX Designer
+                           <h5 class="mt-8 text-[#303030]">Urang Kali</h5>
+                           <h6 class="mt-2 text-[#3F85EC]">
+                              Fullstack Developer
                            </h6>
-                           <p class="mt-6 font-[400] text-xl text-[#676767]">
-                              Saya adalah mentor freelance. Namun, penghasilan
-                              saya menjadi 25% lebih tinggi setelah bergabung di
-                              Eduwork.
+                           <p class="mt-6 text-[#676767]">
+                              The best part is saya gak perlu balas chat
+                              satu-persatu untuk tiap jadwal live.
                            </p>
                         </div>
                      </div>
                   </div>
                   <div class="swiper-slide">
-                     <div
-                        class="shadow-lg p-5 max-[1200px]:p-2 max-[400]:p-1 rounded-3xl"
-                     >
+                     <div class="shadow-lg p-5 rounded-3xl">
                         <img
                            class="img-profile"
-                           src="images/lp-mentor/test-mentor1.png"
+                           src="images/lp-mentor/test-mentor3.png"
                            alt="testi-img"
                         />
                         <div>
-                           <h5 class="mt-8 font-[700] text-2xl text-[#303030]">
-                              Ari Lasso Matua
-                           </h5>
-                           <h6 class="mt-2 font-[500] text-xl text-[#3F85EC]">
-                              UI/UX Designer
+                           <h5 class="mt-8 text-[#303030]">Adi Utomo</h5>
+                           <h6 class="mt-2 text-[#3F85EC]">
+                              National Banking Company
                            </h6>
-                           <p class="mt-6 font-[400] text-xl text-[#676767]">
-                              Saya adalah mentor freelance. Namun, penghasilan
-                              saya menjadi 25% lebih tinggi setelah bergabung di
-                              Eduwork.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div
-                        class="shadow-lg p-5 max-[1200px]:p-2 max-[400]:p-1 rounded-3xl"
-                     >
-                        <img
-                           class="img-profile"
-                           src="images/lp-mentor/test-mentor1.png"
-                           alt="testi-img"
-                        />
-                        <div>
-                           <h5 class="mt-8 font-[700] text-2xl text-[#303030]">
-                              Ari Lasso Matua
-                           </h5>
-                           <h6 class="mt-2 font-[500] text-xl text-[#3F85EC]">
-                              UI/UX Designer
-                           </h6>
-                           <p class="mt-6 font-[400] text-xl text-[#676767]">
-                              Saya adalah mentor freelance. Namun, penghasilan
-                              saya menjadi 25% lebih tinggi setelah bergabung di
-                              Eduwork.
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div
-                        class="shadow-lg p-5 max-[1200px]:p-2 max-[400]:p-1 rounded-3xl"
-                     >
-                        <img
-                           class="img-profile"
-                           src="images/lp-mentor/test-mentor1.png"
-                           alt="testi-img"
-                        />
-                        <div>
-                           <h5 class="mt-8 font-[700] text-2xl text-[#303030]">
-                              Ari Lasso Matua
-                           </h5>
-                           <h6 class="mt-2 font-[500] text-xl text-[#3F85EC]">
-                              UI/UX Designer
-                           </h6>
-                           <p class="mt-6 font-[400] text-xl text-[#676767]">
-                              Saya adalah mentor freelance. Namun, penghasilan
-                              saya menjadi 25% lebih tinggi setelah bergabung di
-                              Eduwork.
+                           <p class="mt-6 text-[#676767]">
+                              Kami senang bisa terhubung dengan talent pool dari
+                              platform serba ada. Great partnership!
                            </p>
                         </div>
                      </div>
@@ -2071,13 +2317,13 @@
                   <div class="flex justify-center gap-0 md:gap-4 flex-wrap">
                      <a
                         href="#"
-                        class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-[300px] my-4 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
+                        class="hover:bg-primary/80 focus:ring-4 focus:outline-none focus:ring-blue-300 w-full sm:w-[300px] my-4 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#187CFF] text-white"
                      >
                         Kerjakan Studi Kasus
                      </a>
                      <a
                         href="#"
-                        class="hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 w-[300px] my-4 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#43936C] text-white"
+                        class="hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 w-full sm:w-[300px] my-4 text-center text-base font-[600] px-8 py-4 rounded-xl bg-[#43936C] text-white"
                      >
                         Konsultasi via WhatsApp
                      </a>
@@ -2223,7 +2469,7 @@
       <!-- Initialize Swiper -->
       <script>
          var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 3,
+            slidesPerView: "auto",
             direction: "horizontal",
             spaceBetween: 10,
             loop: true,
@@ -2236,13 +2482,13 @@
                   slidesPerView: 1,
                },
                480: {
-                  slidesPerView: "auto",
+                  slidesPerView: 1,
                },
                768: {
-                  slidesPerView: 3,
+                  slidesPerView: 2,
                },
-               1000: {
-                  slidesPerView: 3,
+               1280: {
+                  slidesPerView: "auto",
                },
             },
             autoplay: {
@@ -2252,35 +2498,4 @@
          });
       </script>
    </body>
-
-   <!-- Initialize Swiper -->
-   <!-- <script>
-      var swiper = new Swiper(".mySwiper", {
-         effect: "slide",
-         direction: "horizontal",
-         centerdSlides: true,
-         loop: true,
-         slideToClickedSlide: true,
-         autoplay: {
-            delay: 5000,
-         },
-         breakpoints: {
-            0: {
-               slidesPerView: 1,
-            },
-            520: {
-               slidesPerView: 1,
-            },
-            720: {
-               slidesPerView: "auto",
-            },
-         },
-         grabCursor: true,
-         slidesPerGroup: 1,
-         navigation: {
-            nextEl: ".swiper-Button-next",
-            prevEl: ".swiper-Button-prev",
-         },
-      });
-   </script> -->
 </html>
