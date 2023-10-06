@@ -21,8 +21,7 @@
       <style>
          .swiper {
             width: 1016px;
-            padding-bottom: 80px;
-            height: 700px;
+            padding-bottom: 60px;
          }
          .swiper-wrapper {
             align-items: center;
@@ -60,7 +59,7 @@
             height: 530px;
             padding: 28px;
             position: relative;
-            filter: blur(0px);
+            filter: none;
          }
          .swiper-slide .img-profile {
             width: 335px;
@@ -68,7 +67,7 @@
          }
          @media only screen and (max-width: 768px) {
             .swiper {
-               width: 90%;
+               width: 100%;
                gap: 0px;
             }
             .swiper-wrapper {
@@ -81,11 +80,12 @@
                width: 100%;
                margin-left: 0;
                margin-right: 0;
-               filter: blur(0px);
+               padding: 8px;
+               filter: none;
                height: 100%;
             }
             .swiper-slide-next {
-               filter: blur(0px);
+               filter: none;
                height: 100%;
             }
             .swiper-slide-active {
@@ -115,7 +115,7 @@
          }
          @media only screen and (max-width: 1280px) {
             .swiper {
-               width: 90%;
+               width: 100%;
                gap: 0px;
             }
             .swiper-wrapper {
@@ -127,11 +127,11 @@
                width: 100%;
                margin-left: 0;
                margin-right: 0;
-               filter: blur(0px);
+               filter: none;
                height: 100%;
             }
             .swiper-slide-next {
-               filter: blur(0px);
+               filter: none;
                height: 100%;
             }
             .swiper-slide-active {
@@ -483,11 +483,11 @@
                </p>
                <div class="my-10 flex flex-col gap-y-6 relative">
                   <div
-                     class="bg-white-gradient bg-bottom w-full h-full absolute"
+                     class="bg-white-gradient bottom-[-16px] bg-bottom w-full h-full absolute"
                   ></div>
                   <div class="flex justify-center gap-6 flex-wrap">
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-green-200">
                            <img
@@ -505,7 +505,7 @@
                         </div>
                      </div>
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-purple-200">
                            <img
@@ -523,7 +523,7 @@
                         </div>
                      </div>
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-purple-200">
                            <img
@@ -542,7 +542,7 @@
                      </div>
 
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-orange-200">
                            <img
@@ -561,7 +561,7 @@
                      </div>
 
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-blue-200">
                            <img
@@ -579,7 +579,7 @@
                         </div>
                      </div>
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-blue-200">
                            <img
@@ -597,7 +597,7 @@
                         </div>
                      </div>
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white shadow-box-custom rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-purple-200">
                            <img
@@ -616,7 +616,7 @@
                      </div>
 
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white sm:shadow-box-custom shadow-none rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-purple-200">
                            <img
@@ -634,7 +634,7 @@
                         </div>
                      </div>
                      <div
-                        class="flex gap-4 py-5 px-6 bg-white sm:shadow-box-custom shadow-none rounded-2xl"
+                        class="flex gap-4 py-5 sm:w-auto w-full px-6 bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-cyan-200">
                            <img
@@ -652,7 +652,7 @@
                         </div>
                      </div>
                      <div
-                        class="sm:flex gap-4 py-5 px-6 hidden bg-white shadow-box-custom rounded-2xl"
+                        class="sm:flex gap-4 py-5 sm:w-auto w-full px-6 hidden bg-white shadow-box-custom rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-cyan-200">
                            <img
@@ -671,7 +671,7 @@
                      </div>
 
                      <div
-                        class="sm:flex gap-4 py-5 px-6 hidden bg-white rounded-2xl"
+                        class="sm:flex gap-4 py-5 sm:w-auto w-full px-6 hidden bg-white rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-green-200">
                            <img
@@ -690,7 +690,7 @@
                      </div>
 
                      <div
-                        class="sm:flex gap-4 py-5 px-6 hidden bg-white rounded-2xl"
+                        class="sm:flex gap-4 py-5 sm:w-auto w-full px-6 hidden bg-white rounded-2xl"
                      >
                         <div class="p-[10px] rounded-full bg-orange-200">
                            <img
@@ -2015,7 +2015,7 @@
                      <div class="shadow-lg p-5 rounded-3xl">
                         <img
                            class="img-profile"
-                           src="images/lp-mentor/test-mentor3.png"
+                           src="images/lp-mentor/test-mentor2.png"
                            alt="testi-img"
                         />
                         <div>
@@ -2108,7 +2108,7 @@
                      <div class="shadow-lg p-5 rounded-3xl">
                         <img
                            class="img-profile"
-                           src="images/lp-mentor/test-mentor3.png"
+                           src="images/lp-mentor/test-mentor2.png"
                            alt="testi-img"
                         />
                         <div>
